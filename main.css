@@ -1,7 +1,8 @@
-*{
+* {
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
 }
@@ -12,14 +13,14 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.wrapper{
+.wrapper {
   width: 300px;
   min-height: 550px;
   color: #fff;
 }
-.container{
+.container {
   position: relative;
-  padding:  70px 0;
+  padding: 70px 0;
   width: 300px;
   height: 100%;
   border: 2px solid black;
@@ -30,7 +31,7 @@ body {
   background: url(./background.jpg);
   background-size: cover;
 }
-.container::before{
+.container::before {
   content: "";
   width: 35px;
   height: 6px;
@@ -40,7 +41,7 @@ body {
   display: block;
   top: 20px;
 }
-.container::after{
+.container::after {
   content: "";
   width: 50px;
   height: 50px;
@@ -51,30 +52,11 @@ body {
   bottom: 20px;
 }
 
-.title{
+.title {
   margin-bottom: 30px;
 }
 
-.town{
-  margin-bottom: 30px;
-  padding: 10px 20px;
-  border: 2px solid  transparent;
-  border-image:linear-gradient(90deg, rgba(14,0,255,0.7315301120448179) 10%, rgba(54,212,17,1) 50%, rgba(255,0,0,0.7679446778711485) 100%);
-  border-image-slice: 1;
-  outline: none;
-  transform: perspective(1px) translateZ(0);
-  transition-duration: 0.5s;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-
-.town:hover,
-.town:active,
-.town:focus{
-  transform: scale(1.2);
-  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-}
-
-.error{
+.error {
   font-size: 22px;
   margin-bottom: 20px;
   height: 46px;
@@ -83,33 +65,98 @@ body {
   font-weight: bold;
 }
 
-.town-name{
+.town-name {
   font-size: 30px;
   margin-bottom: 5px;
 }
-.clouds{
+.clouds {
   margin-bottom: 10px;
   font-size: 20px;
 }
 .max,
-.min{
+.min {
   display: inline;
 }
-.weather{
+.weather {
   font-size: 40px;
   margin-bottom: 10px;
 }
-.weather__img{
+.weather__img {
   width: 50px;
   height: 50px;
 }
-.other-info{
+.other-info {
   margin-top: 40px;
   width: 100%;
   padding-left: 20px;
 }
 .wind,
 .wind-deg,
-.pressure{
+.pressure {
   margin-bottom: 15px;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+input:focus {
+  outline: none;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 15px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 320px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
 }
